@@ -38,6 +38,10 @@
             border-bottom: 1px dashed #fff;
             margin-bottom: 8px;
         }
+        #paraHeader h1 a {
+            color: #fff;
+            text-decoration: none;
+        }
         #paraCont {
             max-width: 1600px;
             margin: 0 auto;
@@ -91,7 +95,7 @@
             background: #fff;
             color: #000;
         }
-    
+
         .content__item {
             width: 1000px;
             max-width: 70vw;
@@ -153,33 +157,33 @@
             margin-left: -3vw;
         }
         .content__item:nth-child(1) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg1.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg1.jpg);
         }
         .content__item:nth-child(2) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg2.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg2.jpg);
         }
         .content__item:nth-child(3) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg3.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg3.jpg);
         }
         .content__item:nth-child(4) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg4.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg4.jpg);
         }
         .content__item:nth-child(5) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg5.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg5.jpg);
         }
         .content__item:nth-child(6) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg6.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg6.jpg);
         }
         .content__item:nth-child(7) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg7.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg7.jpg);
         }
         .content__item:nth-child(8) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg8.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg8.jpg);
         }
         .content__item:nth-child(9) .content__item__img {
-            background-image: url(https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg9.jpg);
+            background-image: url(https://github.com/lillaya-net/parallax.io/blob/main/images/bg9.jpg);
         }
-    
+
         /* paraDot */
         .paraDot {
             position: fixed;
@@ -222,7 +226,7 @@
         .paraDot li.active a span {
             opacity: 1;
         }
-    
+
         /* info */
         .paraScroll {
             position: fixed;
@@ -247,7 +251,7 @@
     <!-- //info -->
 
     <header id="paraHeader">
-        <h1>Parallax Effect02 - jQuery</h1>
+        <h1><a href="parallaxIndex.html">Parallax Effect02 - jQuery</a></h1>
         <p>패럴랙스 스크롤링 효과 - 닷 메뉴</p>
     </header>
     <!-- //header -->
@@ -396,64 +400,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        // 버튼 클릭해서 이동하기
+        //버튼 클릭해서 이동하기
         $(".paraDot ul li").click(function(e){
-            e.prventDefault();
-            let tarhget = $(this);
+            e.preventDefault();
+            let target = $(this);
             let index = target.index();
-            // alert(index)
             let section = $(".content__item").eq(index);
             let offset = section.offset().top;
-            $("html, body").adimate({scrollTop: offset},600, "easeInQuint");
+            $("html, body").animate({ scrollTop: offset }, 600, "easeInQuint");
         });
 
-        // 스크롤
+        //스크롤 
         $(window).scroll(function(){
             let scrollTop = $(window).scrollTop();
 
-            $(".paraScroll").text(scrollTop(scrollTop));
+            $(".paraScroll span").text(parseInt(scrollTop));
 
             // if( scrollTop >= $(".content__item").eq(0).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(0).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(1).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(1).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(2).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(2).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(3).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(3).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(4).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(4).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(5).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(5).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(6).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(6).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(7).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(7).addClass("active").siblings().removeClass("active");
+            // };
             // if( scrollTop >= $(".content__item").eq(8).offset().top ){
-            //     $(".paraDot ul li").addClass("active").sibllings().removeClass("active");
-            // }
+            //     $(".paraDot ul li").eq(8).addClass("active").siblings().removeClass("active");
+            // };
 
-            //for문  i = 12345678
-            // for( let i=0; i=0; i++ ){
+            //for문
+            // for( let i=0; i<=8; i++ ){
             //     if( scrollTop >= $(".content__item").eq(i).offset().top ){
-            //         $(".paraDot ul li").eq(i).addClass("active").siblings().removeClass("active"){
-
-            //         };
-            //     }
+            //         $(".paraDot ul li").eq(i).addClass("active").siblings().removeClass("active");
+            //     };
             // }
-            
-            // each()
+
+            //each()
             $(".content__item").each(function(index){
-                if( scrollTop >= $(".content__item").eq(index).offset().top){
-                    $(".paraDot ul li").eq(index).addClass("active").siblings().removeClass("active")
+                if( scrollTop >= $(".content__item").eq(index).offset().top ){
+                    $(".paraDot ul li").eq(index).addClass("active").siblings().removeClass("active");
                 };
             });
         });
